@@ -18,6 +18,23 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def user_tweets
+    tweets = current_user.tweets
+    if tweets
+      render json: { tweets: tweets, status: :success, message: 'Tweets found successfully' }
+    else
+      render json: { tweets: [], status: :success, message: 'To tweets found' }
+    end
+  end
+
+  def followers
+    followers = current_user.followers
+    if followers
+      render json: { followers: followers, status: :success, message: 'Followers found successfully' }
+    else
+    end
+  end
+
   def unfollow
     if user = User.find_by_id(params[:user_id])
       if current_user.following?(user)

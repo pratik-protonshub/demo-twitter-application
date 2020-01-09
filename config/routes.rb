@@ -15,6 +15,10 @@ Rails.application.routes.draw do
       get 'followers_tweets', to: 'users#followers_tweets'
       # User Profile
       get 'user_profile', to: 'users#user_profile'
+      # User's tweets
+      get 'user_tweets', to: 'users#user_tweets'
+      # User's followers
+      get 'followers', to: 'users#followers'
     end
   end
 end
