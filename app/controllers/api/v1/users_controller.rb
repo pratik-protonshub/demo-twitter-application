@@ -32,6 +32,7 @@ class Api::V1::UsersController < ApplicationController
     if followers
       render json: { followers: followers, status: :success, message: 'Followers found successfully' }
     else
+      render json: { followers: [], status: :success, message: 'To followers found' }
     end
   end
 
